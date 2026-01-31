@@ -35,15 +35,15 @@ class CharTokenizer:
             vocab_chars = set(self.vocab.keys())
             missing = sorted(file_chars - vocab_chars)
             if missing:
-                print(f"❌ {path.name}: {missing}")
+                print(f"{path.name}: {missing}")
                 total_missing.update(missing)
             else:
-                print(f"✅ {path.name}")
+                print(f"{path.name}")
     
         if total_missing:
-            print(f"\n🚨 ADD THESE TO self.characters: '{''.join(sorted(total_missing))}'")
+            print(f"\nADD THESE TO self.characters: '{''.join(sorted(total_missing))}'")
         else:
-            print("\n🎉 ALL GOOD!")
+            print("\nALL GOOD!")
 
 tokenizer = CharTokenizer()
 tokenizer.coverage_check()

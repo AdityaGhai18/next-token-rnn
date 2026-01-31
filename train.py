@@ -46,7 +46,7 @@ class VanillaRNN(nn.Module):
         logits = self.W_ho(h)
         return logits, h
 
-def generate(model, tokenizer, prompt, max_new_tokens=200, temperature=0.8):
+def generate(model, tokenizer, prompt, max_new_tokens=200, temperature=0.1):
     model.eval()
     tokens = tokenizer.encode(prompt)
     x = torch.tensor(tokens, device='cuda').unsqueeze(0)
